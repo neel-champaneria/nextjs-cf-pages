@@ -1,4 +1,4 @@
-import db from "@/libs/db";
+// import db from "@/libs/db";
 
 import { NextRequest, NextResponse } from "next/server";
 
@@ -7,15 +7,19 @@ import { NextRequest, NextResponse } from "next/server";
 
 export const runtime = "edge";
 
-export async function POST(request: NextRequest) {
-  const { text } = await request.json();
-  const thought = await db.thought.create({
-    data: { text },
-  });
-  return Response.json({ message: "Thought Created" }, { status: 201 });
-}
+// export async function POST(request: NextRequest) {
+//   const { text } = await request.json();
+//   const thought = await db.thought.create({
+//     data: { text },
+//   });
+//   return Response.json({ message: "Thought Created" }, { status: 201 });
+// }
+
+// export async function GET(request: NextRequest) {
+//   const thoughts = await db.thought.findMany();
+//   return Response.json({ thoughts });
+// }
 
 export async function GET(request: NextRequest) {
-  const thoughts = await db.thought.findMany();
-  return Response.json({ thoughts });
+  return Response.json({ message: "Hello" });
 }
